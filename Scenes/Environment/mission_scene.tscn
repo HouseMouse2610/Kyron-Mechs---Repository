@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://8s0w1ap2tv4f"]
+
+[ext_resource type="PackedScene" uid="uid://dc2rbq3o582w5" path="res://Scenes/Environment/tile_set.tscn" id="1_fqokx"]
+[ext_resource type="PackedScene" uid="uid://bjs82q1o7wndx" path="res://Scenes/Player/player_mech.tscn" id="2_d7hjr"]
+
+[node name="Mission Scene" type="Node2D" unique_id=670270641]
+
+[node name="TileSet" parent="." unique_id=1071705506 instance=ExtResource("1_fqokx")]
+
+[node name="Player Mech" parent="." unique_id=834378137 instance=ExtResource("2_d7hjr")]
+position = Vector2(0, -64)

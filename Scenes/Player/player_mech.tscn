@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://bjs82q1o7wndx"]
+
+[ext_resource type="Script" uid="uid://dumxwui234x3r" path="res://Scripts/Player/player_mech.gd" id="1_1uf8t"]
+[ext_resource type="Texture2D" uid="uid://dmj6y5td62120" path="res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Hawk Ride Armor.png" id="1_cc7eu"]
+[ext_resource type="Script" uid="uid://msd7nv5ywyeu" path="res://Scripts/Player/animated_sprite_2d_mech.gd" id="3_vmpif"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cwid"]
+radius = 20.0
+height = 58.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cc7eu"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(114, 384, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uf8t"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(0, 0, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmpif"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(0, 384, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbdr4"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(114, 384, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg4wy"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(114, 0, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44dtd"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(228, 0, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cplde"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(342, 0, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ismlb"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(228, 0, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gaqv"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(114, 0, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt7j6"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(114, 576, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmhkq"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(114, 64, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ypaj"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(228, 64, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqy7e"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(342, 64, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb73g"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(0, 128, 114, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tdbe"]
+atlas = ExtResource("1_cc7eu")
+region = Rect2(114, 128, 114, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cc7eu")
+}],
+"loop": 1,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uf8t")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmpif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbdr4")
+}],
+"loop": 1,
+"name": &"Jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg4wy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44dtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cplde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ismlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gaqv")
+}],
+"loop": 0,
+"name": &"Land",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt7j6")
+}],
+"loop": 1,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmhkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ypaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqy7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb73g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tdbe")
+}],
+"loop": 1,
+"name": &"Walk",
+"speed": 7.0
+}]
+
+[node name="Player Mech" type="CharacterBody2D" unique_id=834378137]
+script = ExtResource("1_1uf8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=240849158]
+position = Vector2(-20, -4)
+shape = SubResource("CapsuleShape2D_7cwid")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=95204013]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"Land"
+autoplay = "Idle"
+script = ExtResource("3_vmpif")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2089994199]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]

@@ -1,3 +1,31 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791117742
+::res://::1791132682
 icon.svg::CompressedTexture2D::1927404957755873456::1791066227::1791066241::1::::<><><>0<>0<>8973f2ad03a13e024d11d7a890ed5af1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Assets/::1791117809
+::res://Assets/Audio/::1791117831
+::res://Assets/Audio/OSTs/::1791117825
+::res://Assets/Audio/SFX/::1791117831
+::res://Assets/Sprites/::1791117884
+::res://Assets/Sprites/Enemies/::1791117867
+::res://Assets/Sprites/Player/::1791119898
+::res://Assets/Sprites/Player/Mech/::1791124919
+SNES - Mega Man X3 - Miscellaneous - Hawk Ride Armor.png::CompressedTexture2D::8022034265582320767::1791124918::1791124919::1::::<><><>0<>0<>6254e964d275b4096fbb0657d5cd06d3<>res://.godot/imported/SNES - Mega Man X3 - Miscellaneous - Hawk Ride Armor.png-8dfb4cdcb696eefb1f7b8772daa3e9d1.ctex::
+::res://Assets/Sprites/Tiles/::1791120108
+Sprite Kyron Mechs TileSet.png::CompressedTexture2D::8924831040039196774::1791120108::1791120108::1::::<><><>0<>0<>59783308a357faeb55a3a57c5d59f573<>res://.godot/imported/Sprite Kyron Mechs TileSet.png-7b4c3e7bd7aedc2105762c55929f24f7.ctex::
+::res://Assets/Sprites/UI/::1791117884
+::res://Resourses/::1791117908
+::res://Resourses/Shaders/::1791117903
+::res://Resourses/Themes/::1791117908
+::res://Scenes/::1791117949
+::res://Scenes/Enemies/::1791117925
+::res://Scenes/Environment/::1791122186
+mission_scene.tscn::PackedScene::2354949218238702171::1791122186::0::1::::<><><>0<>0<><>::uid://dc2rbq3o582w5::::res://Scenes/Environment/tile_set.tscn<>uid://bjs82q1o7wndx::::res://Scenes/Player/player_mech.tscn
+tile_set.tscn::PackedScene::7356412796691557662::1791120324::0::1::::<><><>0<>0<><>::uid://d0fiws1fny5yo::::res://Assets/Sprites/Tiles/Sprite Kyron Mechs TileSet.png
+::res://Scenes/Player/::1791125459
+player_mech.tscn::PackedScene::3057331834423449633::1791125459::0::1::::<><><>0<>0<><>::uid://dmj6y5td62120::::res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Hawk Ride Armor.png
+::res://Scenes/UI/::1791117949
+::res://Scripts/::1791118004
+::res://Scripts/Enemies/::1791117968
+::res://Scripts/Environment/::1791117981
+::res://Scripts/Player/::1791118000
+::res://Scripts/UI/::1791118004
