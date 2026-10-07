@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmj6y5td62120"
-path="res://.godot/imported/SNES - Mega Man X3 - Miscellaneous - Hawk Ride Armor.png-8dfb4cdcb696eefb1f7b8772daa3e9d1.ctex"
+uid="uid://csphuqlmrwbgb"
+path="res://.godot/imported/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png-b2cc2c4ef03492ccb521f197023c02c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Hawk Ride Armor.png"
-dest_files=["res://.godot/imported/SNES - Mega Man X3 - Miscellaneous - Hawk Ride Armor.png-8dfb4cdcb696eefb1f7b8772daa3e9d1.ctex"]
+source_file="res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png"
+dest_files=["res://.godot/imported/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png-b2cc2c4ef03492ccb521f197023c02c2.ctex"]
 
 [params]
 
