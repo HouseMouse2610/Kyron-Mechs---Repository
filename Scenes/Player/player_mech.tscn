@@ -95,7 +95,7 @@ region = Rect2(237, 59, 79, 59)
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vmpif")
 }, {
 "duration": 1.0,
@@ -112,7 +112,7 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_or75p")
 }, {
 "duration": 1.0,
@@ -208,8 +208,10 @@ shape = SubResource("CapsuleShape2D_7cwid")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=95204013]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"Walk"
+animation = &"Land"
 autoplay = "Idle"
+frame = 4
+frame_progress = 1.0
 script = ExtResource("3_vmpif")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2089994199]

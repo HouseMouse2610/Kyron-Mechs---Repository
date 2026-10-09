@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791417572
+::res://::1791502338
 icon.svg::CompressedTexture2D::1927404957755873456::1791066227::1791066241::1::::<><><>0<>0<>8973f2ad03a13e024d11d7a890ed5af1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Assets/::1791117809
 ::res://Assets/Audio/::1791117831
@@ -18,16 +18,16 @@ Sprite Kyron Mechs TileSet.png::CompressedTexture2D::8924831040039196774::179112
 ::res://Resourses/Themes/::1791117908
 ::res://Scenes/::1791117949
 ::res://Scenes/Enemies/::1791117925
-::res://Scenes/Environment/::1791140917
+::res://Scenes/Environment/::1791419724
 mission_scene.tscn::PackedScene::2354949218238702171::1791140917::0::1::::<><><>0<>0<><>::uid://dc2rbq3o582w5::::res://Scenes/Environment/tile_set.tscn<>uid://bjs82q1o7wndx::::res://Scenes/Player/player_mech.tscn
-tile_set.tscn::PackedScene::7356412796691557662::1791120324::0::1::::<><><>0<>0<><>::uid://d0fiws1fny5yo::::res://Assets/Sprites/Tiles/Sprite Kyron Mechs TileSet.png
-::res://Scenes/Player/::1791331452
-player_mech.tscn::PackedScene::3057331834423449633::1791331452::0::1::::<><><>0<>0<><>::uid://dumxwui234x3r::::res://Scripts/Player/player_mech.gd<>uid://csphuqlmrwbgb::::res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png<>uid://msd7nv5ywyeu::::res://Scripts/Player/animated_sprite_2d_mech.gd
+tile_set.tscn::PackedScene::7356412796691557662::1791419724::0::1::::<><><>0<>0<><>::uid://d0fiws1fny5yo::::res://Assets/Sprites/Tiles/Sprite Kyron Mechs TileSet.png
+::res://Scenes/Player/::1791418834
+player_mech.tscn::PackedScene::3057331834423449633::1791418834::0::1::::<><><>0<>0<><>::uid://dumxwui234x3r::::res://Scripts/Player/player_mech.gd<>uid://csphuqlmrwbgb::::res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png<>uid://msd7nv5ywyeu::::res://Scripts/Player/animated_sprite_2d_mech.gd
 ::res://Scenes/UI/::1791117949
 ::res://Scripts/::1791118004
 ::res://Scripts/Enemies/::1791117968
 ::res://Scripts/Environment/::1791117981
-::res://Scripts/Player/::1791143262
-animated_sprite_2d_mech.gd::GDScript::879664936253192620::1791139288::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
-player_mech.gd::GDScript::8589248299278983981::1791143262::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+::res://Scripts/Player/::1791419696
+animated_sprite_2d_mech.gd::GDScript::879664936253192620::1791417852::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
+player_mech.gd::GDScript::8589248299278983981::1791419696::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 ::res://Scripts/UI/::1791118004

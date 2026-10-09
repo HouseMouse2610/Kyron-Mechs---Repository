@@ -11,6 +11,11 @@ func update_sprite():
 		play("Jump")
 	elif p.current_state == p.state.FALL:
 		play("Fall")
+	elif p.current_state == p.state.ATTACK:
+		if p.is_on_floor():
+			play("Attack")
+		elif not p.is_on_floor():
+			play("Air Attack")
 	elif p.current_state == p.state.LAND:
 		play("Land")
 	elif p.current_state == p.state.DASH:
@@ -21,4 +26,6 @@ func update_sprite():
 
 func _on_animation_finished() -> void:
 	if p.current_state == p.state.LAND:
+		p.current_state = p.state.IDLE
+	elif p.current_state == p.state.ATTACK:
 		p.current_state = p.state.IDLE

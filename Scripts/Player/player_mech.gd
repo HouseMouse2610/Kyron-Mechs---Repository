@@ -8,6 +8,7 @@ var last_direction : float = 0
 var was_on_floor : bool = is_on_floor()
 
 @export var speed : float = 135
+@export var attack_speed : float = 20
 @export var acceleration : float = 250.0
 @export var dash_acceleration : float = 1000.0
 @export var friction : float = 625
@@ -15,9 +16,11 @@ var was_on_floor : bool = is_on_floor()
 @export var gravity : float = 625.0
 @export var fall_mult : float = 1.5
 
-enum state{IDLE, WALK, JUMP, FALL, LAND, DASH}
+enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK}
 @export var current_state = state.IDLE
-
+# O QUE FICOU PRA FAZER: 
+#A animação de attack só roda por 1 frame, 
+#tente faze-la terminar e depois trocar de estado.
 func _physics_process(_delta: float) -> void:
 	direction = Input.get_axis("Left", "Right")
 	
@@ -49,12 +52,18 @@ func run_state(delta) -> void:
 		state.DASH:
 			move_player_x(delta)
 			move_player_y(delta)
+		state.ATTACK:
+			move_player_x(delta)
+			move_player_y(delta)
 
 func change_state():
 	if is_on_floor() and not was_on_floor:
 		current_state = state.LAND
+		
 	elif current_state != state.LAND:
-		if is_on_floor() and Input.is_action_pressed("Dash"):
+		if Input.is_action_just_pressed("Attack"):
+			current_state = state.ATTACK
+		elif is_on_floor() and Input.is_action_pressed("Dash"):
 			current_state = state.DASH
 		elif is_on_floor() and velocity.x == 0:
 			current_state = state.IDLE
@@ -75,6 +84,11 @@ func move_player_x(delta):
 			(speed * 2) * last_direction, 
 			dash_acceleration * delta)
 			
+	if current_state == state.ATTACK:
+		velocity.x = move_toward(velocity.x, 
+		attack_speed * direction, 
+		dash_acceleration * delta)
+		
 	if direction != 0:
 		if velocity.x * direction < 0:
 			velocity.x = move_toward(velocity.x, 
