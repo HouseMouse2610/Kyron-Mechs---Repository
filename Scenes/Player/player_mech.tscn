@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dumxwui234x3r" path="res://Scripts/Player/player_mech.gd" id="1_1uf8t"]
 [ext_resource type="Texture2D" uid="uid://csphuqlmrwbgb" path="res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png" id="2_vmpif"]
 [ext_resource type="Script" uid="uid://msd7nv5ywyeu" path="res://Scripts/Player/animated_sprite_2d_mech.gd" id="3_vmpif"]
+[ext_resource type="Script" uid="uid://bytlce0rbfnw6" path="res://Scripts/Player/area_2d.gd" id="4_hbdr4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cwid"]
 radius = 19.0
@@ -198,11 +199,14 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(38, 44)
+
 [node name="Player Mech" type="CharacterBody2D" unique_id=834378137]
 script = ExtResource("1_1uf8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=240849158]
-position = Vector2(-1, -4)
+position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_7cwid")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=95204013]
@@ -215,5 +219,15 @@ frame_progress = 1.0
 script = ExtResource("3_vmpif")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2089994199]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=917767188]
+light_mask = 2
+script = ExtResource("4_hbdr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1182624014]
+position = Vector2(19, -9.4577706e-07)
+shape = SubResource("RectangleShape2D_g4v7s")
+disabled = true
+debug_color = Color(0.8430359, 0.38108054, 0, 0.41960785)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]

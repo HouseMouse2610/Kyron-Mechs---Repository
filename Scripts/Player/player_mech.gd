@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var area = $Area2D
 
 var direction : float = 0
 var last_direction : float = 0
@@ -18,14 +19,13 @@ var was_on_floor : bool = is_on_floor()
 
 enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK}
 @export var current_state = state.IDLE
-# O QUE FICOU PRA FAZER: 
-#A animação de attack só roda por 1 frame, 
-#tente faze-la terminar e depois trocar de estado.
+
 func _physics_process(_delta: float) -> void:
 	direction = Input.get_axis("Left", "Right")
 	
 	change_state()
 	run_state(_delta)
+	area.attack()
 	was_on_floor = is_on_floor()
 	if direction != 0:
 		last_direction = direction
@@ -63,16 +63,17 @@ func change_state():
 	elif current_state != state.LAND:
 		if Input.is_action_just_pressed("Attack"):
 			current_state = state.ATTACK
-		elif is_on_floor() and Input.is_action_pressed("Dash"):
-			current_state = state.DASH
-		elif is_on_floor() and velocity.x == 0:
-			current_state = state.IDLE
-		elif velocity.x != 0 and is_on_floor():
-			current_state = state.WALK
-		elif velocity.y < 0 and not is_on_floor():
-			current_state = state.JUMP
-		elif velocity.y > 0 and not is_on_floor():
-			current_state = state.FALL
+		elif current_state != state.ATTACK:
+			if is_on_floor() and Input.is_action_pressed("Dash"):
+				current_state = state.DASH
+			elif is_on_floor() and velocity.x == 0:
+				current_state = state.IDLE
+			elif velocity.x != 0 and is_on_floor():
+				current_state = state.WALK
+			elif velocity.y < 0 and not is_on_floor():
+				current_state = state.JUMP
+			elif velocity.y > 0 and not is_on_floor():
+				current_state = state.FALL
 	return
 
 func move_player_x(delta):
@@ -105,7 +106,7 @@ func move_player_x(delta):
 		friction * delta)
 
 func move_player_y(delta):
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor() and current_state != state.ATTACK:
 		velocity.y = jump_velocity
 	
 	if Input.is_action_just_released("Jump") and not is_on_floor() and velocity.y < 0:
