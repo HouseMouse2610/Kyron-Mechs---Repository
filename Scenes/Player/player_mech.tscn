@@ -49,6 +49,14 @@ region = Rect2(79, 236, 79, 59)
 atlas = ExtResource("2_vmpif")
 region = Rect2(158, 177, 79, 59)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rbpj"]
+atlas = ExtResource("2_vmpif")
+region = Rect2(237, 236, 79, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbjgd"]
+atlas = ExtResource("2_vmpif")
+region = Rect2(158, 531, 79, 59)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_rt7j6"]
 atlas = ExtResource("2_vmpif")
 region = Rect2(0, 0, 79, 59)
@@ -147,6 +155,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4rbpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbjgd")
+}],
+"loop": 1,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rt7j6")
 }],
 "loop": 1,
@@ -212,10 +231,10 @@ shape = SubResource("CapsuleShape2D_7cwid")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=95204013]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"Land"
+animation = &"Hurt"
 autoplay = "Idle"
-frame = 4
-frame_progress = 1.0
+frame = 1
+frame_progress = 0.48527274
 script = ExtResource("3_vmpif")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2089994199]

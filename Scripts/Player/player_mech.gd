@@ -8,6 +8,7 @@ var direction : float = 0
 var last_direction : float = 0
 var was_on_floor : bool = is_on_floor()
 
+@export var health : int = 5
 @export var speed : float = 135
 @export var attack_speed : float = 20
 @export var acceleration : float = 250.0
@@ -17,11 +18,12 @@ var was_on_floor : bool = is_on_floor()
 @export var gravity : float = 625.0
 @export var fall_mult : float = 1.5
 
-enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK}
+enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK, HURT}
 @export var current_state = state.IDLE
 
 func _physics_process(_delta: float) -> void:
-	direction = Input.get_axis("Left", "Right")
+	if current_state != state.LAND:
+		direction = Input.get_axis("Left", "Right")
 	
 	change_state()
 	run_state(_delta)
@@ -53,6 +55,9 @@ func run_state(delta) -> void:
 			move_player_x(delta)
 			move_player_y(delta)
 		state.ATTACK:
+			move_player_x(delta)
+			move_player_y(delta)
+		state.HURT:
 			move_player_x(delta)
 			move_player_y(delta)
 
@@ -90,6 +95,9 @@ func move_player_x(delta):
 		attack_speed * direction, 
 		dash_acceleration * delta)
 		
+	if current_state == state.HURT:
+		velocity.x = move_toward(speed, 0, acceleration * delta)
+		
 	if direction != 0:
 		if velocity.x * direction < 0:
 			velocity.x = move_toward(velocity.x, 
@@ -106,6 +114,9 @@ func move_player_x(delta):
 		friction * delta)
 
 func move_player_y(delta):
+	if current_state == state.HURT:
+		velocity.x = jump_velocity / 2
+	
 	if Input.is_action_just_pressed("Jump") and is_on_floor() and current_state != state.ATTACK:
 		velocity.y = jump_velocity
 	

@@ -20,6 +20,8 @@ func update_sprite():
 		play("Land")
 	elif p.current_state == p.state.DASH:
 		play("Dash")
+	elif p.current_state == p.state.HURT:
+		play("Hurt")
 	
 	if p.direction != 0:
 		flip_h = (p.direction < 0) 
