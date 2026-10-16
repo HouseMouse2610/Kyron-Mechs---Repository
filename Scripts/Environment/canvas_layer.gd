@@ -4,4 +4,5 @@ extends CanvasLayer
 @onready var l = $Label
 
 func _physics_process(_delta: float) -> void:
-	l.text = "Health:" + str(p.health)
+	if p.current_state == p.state.HURT:
+		l.text = "Health:" + str(p.health)

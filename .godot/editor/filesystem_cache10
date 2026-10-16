@@ -1,12 +1,12 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1792023998
+::res://::1792105694
 icon.svg::CompressedTexture2D::1927404957755873456::1791066227::1791066241::1::::<><><>0<>0<>8973f2ad03a13e024d11d7a890ed5af1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Assets/::1791117809
 ::res://Assets/Audio/::1791117831
 ::res://Assets/Audio/OSTs/::1791117825
 ::res://Assets/Audio/SFX/::1791117831
 ::res://Assets/Sprites/::1791117884
-::res://Assets/Sprites/Enemies/::1792024069
+::res://Assets/Sprites/Enemies/::1792024070
 Sprite Kyron Mechs Boss.png::CompressedTexture2D::3028924200605688271::1792024069::1792024070::1::::<><><>0<>0<>d5e3886d79549c17d942ce7774a7532e<>res://.godot/imported/Sprite Kyron Mechs Boss.png-c3a27a39101579ae4731d99bfa328976.ctex::
 ::res://Assets/Sprites/Player/::1791119898
 ::res://Assets/Sprites/Player/Mech/::1791331450
@@ -19,8 +19,8 @@ Sprite Kyron Mechs TileSet.png::CompressedTexture2D::8924831040039196774::179112
 ::res://Resourses/Themes/::1791117908
 ::res://Scenes/::1791117949
 ::res://Scenes/Enemies/::1791117925
-::res://Scenes/Environment/::1792023949
-mission_scene.tscn::PackedScene::2354949218238702171::1792023949::0::1::::<><><>0<>0<><>::uid://dc2rbq3o582w5::::res://Scenes/Environment/tile_set.tscn<>uid://bjs82q1o7wndx::::res://Scenes/Player/player_mech.tscn<>uid://bd65fd5ah6sd2::::res://Scripts/Environment/canvas_layer.gd
+::res://Scenes/Environment/::1792024085
+mission_scene.tscn::PackedScene::2354949218238702171::1792024085::0::1::::<><><>0<>0<><>::uid://dc2rbq3o582w5::::res://Scenes/Environment/tile_set.tscn<>uid://bjs82q1o7wndx::::res://Scenes/Player/player_mech.tscn<>uid://bd65fd5ah6sd2::::res://Scripts/Environment/canvas_layer.gd
 tile_set.tscn::PackedScene::7356412796691557662::1791502400::0::1::::<><><>0<>0<><>::uid://d0fiws1fny5yo::::res://Assets/Sprites/Tiles/Sprite Kyron Mechs TileSet.png
 ::res://Scenes/Player/::1792023186
 player_mech.tscn::PackedScene::3057331834423449633::1792023186::0::1::::<><><>0<>0<><>::uid://dumxwui234x3r::::res://Scripts/Player/player_mech.gd<>uid://csphuqlmrwbgb::::res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png<>uid://msd7nv5ywyeu::::res://Scripts/Player/animated_sprite_2d_mech.gd<>uid://bytlce0rbfnw6::::res://Scripts/Player/area_2d.gd

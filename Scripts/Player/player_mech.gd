@@ -9,6 +9,7 @@ var last_direction : float = 0
 var was_on_floor : bool = is_on_floor()
 
 @export var health : int = 5
+@export var max_health : int = 5
 @export var speed : float = 135
 @export var attack_speed : float = 20
 @export var acceleration : float = 250.0
@@ -18,7 +19,8 @@ var was_on_floor : bool = is_on_floor()
 @export var gravity : float = 625.0
 @export var fall_mult : float = 1.5
 
-enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK, HURT}
+enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK, HURT, DEAD}
+
 @export var current_state = state.IDLE
 
 func _physics_process(_delta: float) -> void:
@@ -60,9 +62,18 @@ func run_state(delta) -> void:
 		state.HURT:
 			move_player_x(delta)
 			move_player_y(delta)
+		state.DEAD:
+			queue_free()
 
 func change_state():
-	if is_on_floor() and not was_on_floor:
+	if Input.is_action_just_pressed("Hurt"):
+		if health <= 0:
+			current_state = state.DEAD
+		elif health > 0:
+			health -= 1
+			current_state = state.HURT
+			
+	elif is_on_floor() and not was_on_floor:
 		current_state = state.LAND
 		
 	elif current_state != state.LAND:
@@ -96,7 +107,7 @@ func move_player_x(delta):
 		dash_acceleration * delta)
 		
 	if current_state == state.HURT:
-		velocity.x = move_toward(speed, 0, acceleration * delta)
+		velocity.x = 999
 		
 	if direction != 0:
 		if velocity.x * direction < 0:
