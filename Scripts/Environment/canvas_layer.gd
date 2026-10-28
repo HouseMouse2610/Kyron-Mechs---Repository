@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var p = $"../Player Mech"
 @onready var l = $Label
+@onready var h = $Health # essa linha aqui não funciona
 
-func _physics_process(_delta: float) -> void:
-	if p.current_state == p.state.HURT:
-		l.text = "Health:" + str(p.health)
+func atualize_label():
+	l.text = str(h.health) + str(h.max_health)
+	

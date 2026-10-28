@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://csphuqlmrwbgb" path="res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png" id="2_vmpif"]
 [ext_resource type="Script" uid="uid://msd7nv5ywyeu" path="res://Scripts/Player/animated_sprite_2d_mech.gd" id="3_vmpif"]
 [ext_resource type="Script" uid="uid://bytlce0rbfnw6" path="res://Scripts/Player/area_2d.gd" id="4_hbdr4"]
+[ext_resource type="PackedScene" uid="uid://134jh4bs4ex2" path="res://Scenes/Components/health.tscn" id="5_qmhkq"]
+[ext_resource type="Script" uid="uid://ob6ls3gdekw6" path="res://Scripts/Components/health.gd" id="6_8ypaj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7cwid"]
 radius = 19.0
@@ -48,10 +50,6 @@ region = Rect2(79, 236, 79, 59)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbdr4"]
 atlas = ExtResource("2_vmpif")
 region = Rect2(158, 177, 79, 59)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rbpj"]
-atlas = ExtResource("2_vmpif")
-region = Rect2(237, 236, 79, 59)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbjgd"]
 atlas = ExtResource("2_vmpif")
@@ -155,9 +153,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4rbpj")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_hbjgd")
 }],
 "loop": 1,
@@ -233,8 +228,7 @@ z_index = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"Hurt"
 autoplay = "Idle"
-frame = 1
-frame_progress = 0.48527274
+frame_progress = 0.94500905
 script = ExtResource("3_vmpif")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2089994199]
@@ -248,5 +242,8 @@ position = Vector2(19, -9.4577706e-07)
 shape = SubResource("RectangleShape2D_g4v7s")
 disabled = true
 debug_color = Color(0.8430359, 0.38108054, 0, 0.41960785)
+
+[node name="Health" parent="." unique_id=1830546194 instance=ExtResource("5_qmhkq")]
+script = ExtResource("6_8ypaj")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]

@@ -3,13 +3,12 @@ extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var area = $Area2D
+@onready var health = $Health
 
 var direction : float = 0
 var last_direction : float = 0
-var was_on_floor : bool = is_on_floor()
+var was_on_floor : bool
 
-@export var health : int = 5
-@export var max_health : int = 5
 @export var speed : float = 135
 @export var attack_speed : float = 20
 @export var acceleration : float = 250.0
@@ -22,6 +21,9 @@ var was_on_floor : bool = is_on_floor()
 enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK, HURT, DEAD}
 
 @export var current_state = state.IDLE
+
+func _ready() -> void:
+	health.health = 5
 
 func _physics_process(_delta: float) -> void:
 	if current_state != state.LAND:
@@ -67,11 +69,7 @@ func run_state(delta) -> void:
 
 func change_state():
 	if Input.is_action_just_pressed("Hurt"):
-		if health <= 0:
-			current_state = state.DEAD
-		elif health > 0:
-			health -= 1
-			current_state = state.HURT
+		be_hit()
 			
 	elif is_on_floor() and not was_on_floor:
 		current_state = state.LAND
@@ -96,7 +94,7 @@ func move_player_x(delta):
 	if current_state == state.LAND:
 		velocity.x = 0
 		
-	if current_state == state.DASH:
+	if Input.is_action_pressed("Dash"):
 		velocity.x = move_toward(velocity.x, 
 			(speed * 2) * last_direction, 
 			dash_acceleration * delta)
@@ -107,7 +105,7 @@ func move_player_x(delta):
 		dash_acceleration * delta)
 		
 	if current_state == state.HURT:
-		velocity.x = 999
+		velocity.x = speed * -last_direction
 		
 	if direction != 0:
 		if velocity.x * direction < 0:
@@ -125,9 +123,6 @@ func move_player_x(delta):
 		friction * delta)
 
 func move_player_y(delta):
-	if current_state == state.HURT:
-		velocity.x = jump_velocity / 2
-	
 	if Input.is_action_just_pressed("Jump") and is_on_floor() and current_state != state.ATTACK:
 		velocity.y = jump_velocity
 	
@@ -139,3 +134,10 @@ func move_player_y(delta):
 			velocity.y += gravity * fall_mult * delta
 		else:
 			velocity.y += gravity * delta
+
+func be_hit():
+	if health.health > 0:
+		current_state = state.HURT
+		health.hurt()
+	else:
+		current_state = state.DEAD

@@ -24,10 +24,12 @@ func update_sprite():
 		play("Hurt")
 	
 	if p.direction != 0:
-		flip_h = (p.direction < 0) 
+		flip_h = (p.direction < 0)
 
 func _on_animation_finished() -> void:
 	if p.current_state == p.state.LAND:
 		p.current_state = p.state.IDLE
 	elif p.current_state == p.state.ATTACK:
+		p.current_state = p.state.IDLE
+	elif p.current_state == p.state.HURT:
 		p.current_state = p.state.IDLE
