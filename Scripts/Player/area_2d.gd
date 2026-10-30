@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var p = $".."
-@onready var c = $CollisionShape2D
+@onready var hit = $HitBox
 
 func attack():
 	if p.direction > 0:
@@ -10,6 +10,6 @@ func attack():
 		rotation_degrees = 180
 	
 	if p.current_state == p.state.ATTACK:
-		c.disabled = false
+		hit.disabled = false
 	else:
-		c.disabled = true
+		hit.disabled = true

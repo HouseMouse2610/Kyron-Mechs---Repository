@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1793145387
+::res://::1793316834
 icon.svg::CompressedTexture2D::1927404957755873456::1791066227::1791066241::1::::<><><>0<>0<>8973f2ad03a13e024d11d7a890ed5af1<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://Assets/::1791117809
 ::res://Assets/Audio/::1791117831
@@ -20,21 +20,22 @@ Sprite Kyron Mechs TileSet.png::CompressedTexture2D::8924831040039196774::179112
 ::res://Scenes/::1792955663
 ::res://Scenes/Components/::1792955716
 health.tscn::PackedScene::1884489789171301025::1792955716::0::1::::<><><>0<>0<><>::
-::res://Scenes/Enemies/::1791117925
-::res://Scenes/Environment/::1792947962
-mission_scene.tscn::PackedScene::2354949218238702171::1792947962::0::1::::<><><>0<>0<><>::uid://dc2rbq3o582w5::::res://Scenes/Environment/tile_set.tscn<>uid://bjs82q1o7wndx::::res://Scenes/Player/player_mech.tscn<>uid://bd65fd5ah6sd2::::res://Scripts/Environment/canvas_layer.gd
-tile_set.tscn::PackedScene::7356412796691557662::1791502400::0::1::::<><><>0<>0<><>::uid://d0fiws1fny5yo::::res://Assets/Sprites/Tiles/Sprite Kyron Mechs TileSet.png
-::res://Scenes/Player/::1792965679
-player_mech.tscn::PackedScene::3057331834423449633::1792965679::0::1::::<><><>0<>0<><>::uid://dumxwui234x3r::::res://Scripts/Player/player_mech.gd<>uid://csphuqlmrwbgb::::res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png<>uid://msd7nv5ywyeu::::res://Scripts/Player/animated_sprite_2d_mech.gd<>uid://bytlce0rbfnw6::::res://Scripts/Player/area_2d.gd<>uid://134jh4bs4ex2::::res://Scenes/Components/health.tscn<>uid://ob6ls3gdekw6::::res://Scripts/Components/health.gd
+::res://Scenes/Enemies/::1793232848
+boss_orokai.tscn::PackedScene::9017371679727642443::1793232848::0::1::::<><><>0<>0<><>::uid://bjfh66sr2tnyd::::res://Assets/Sprites/Enemies/Sprite Kyron Mechs Boss.png
+::res://Scenes/Environment/::1793232856
+mission_scene.tscn::PackedScene::2354949218238702171::1793232856::0::1::::<><><>0<>0<><>::uid://dc2rbq3o582w5::::res://Scenes/Environment/tile_set.tscn<>uid://bjs82q1o7wndx::::res://Scenes/Player/player_mech.tscn<>uid://bd65fd5ah6sd2::::res://Scripts/Environment/canvas_layer.gd<>uid://d1qc188yu5u5p::::res://Scenes/Enemies/boss_orokai.tscn
+tile_set.tscn::PackedScene::7356412796691557662::1793232249::0::1::::<><><>0<>0<><>::uid://d0fiws1fny5yo::::res://Assets/Sprites/Tiles/Sprite Kyron Mechs TileSet.png
+::res://Scenes/Player/::1793231560
+player_mech.tscn::PackedScene::3057331834423449633::1793231560::0::1::::<><><>0<>0<><>::uid://dumxwui234x3r::::res://Scripts/Player/player_mech.gd<>uid://csphuqlmrwbgb::::res://Assets/Sprites/Player/Mech/SNES - Mega Man X3 - Miscellaneous - Chimera Ride Armor.png<>uid://msd7nv5ywyeu::::res://Scripts/Player/animated_sprite_2d_mech.gd<>uid://bytlce0rbfnw6::::res://Scripts/Player/area_2d.gd<>uid://134jh4bs4ex2::::res://Scenes/Components/health.tscn<>uid://ob6ls3gdekw6::::res://Scripts/Components/health.gd
 ::res://Scenes/UI/::1791117949
 ::res://Scripts/::1792955701
-::res://Scripts/Components/::1792965250
-health.gd::GDScript::986611048146844739::1792965250::0::1::::Component<>Node<><>0<>0<><>::
+::res://Scripts/Components/::1793230672
+health.gd::GDScript::986611048146844739::1793230672::0::1::::Component<>Node<><>0<>0<><>::
 ::res://Scripts/Enemies/::1791117968
-::res://Scripts/Environment/::1792960769
-canvas_layer.gd::GDScript::2662813567660346289::1792960769::0::1::::<>CanvasLayer<><>0<>0<><>::
-::res://Scripts/Player/::1792965665
+::res://Scripts/Environment/::1793231433
+canvas_layer.gd::GDScript::2662813567660346289::1793231433::0::1::::<>CanvasLayer<><>0<>0<><>::
+::res://Scripts/Player/::1793230629
 animated_sprite_2d_mech.gd::GDScript::879664936253192620::1792948153::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 area_2d.gd::GDScript::4110847816328716759::1791590250::0::1::::<>Area2D<><>0<>0<><>::
-player_mech.gd::GDScript::8589248299278983981::1792965665::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+player_mech.gd::GDScript::8589248299278983981::1793230629::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
 ::res://Scripts/UI/::1791118004

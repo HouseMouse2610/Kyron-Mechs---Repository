@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://d1qc188yu5u5p"]
+
+[ext_resource type="Script" uid="uid://dm42j7mgv15nd" path="res://Scripts/Enemies/boss_orokai.gd" id="1_y6nr3"]
+[ext_resource type="Texture2D" uid="uid://bjfh66sr2tnyd" path="res://Assets/Sprites/Enemies/Sprite Kyron Mechs Boss.png" id="1_yskxg"]
+[ext_resource type="PackedScene" uid="uid://drubhgktwrwat" path="res://Scenes/Components/hit_box.tscn" id="3_hhqvu"]
+[ext_resource type="PackedScene" uid="uid://c38jmmex822ar" path="res://Scenes/Components/boss_base_component.tscn" id="3_ifblo"]
+[ext_resource type="PackedScene" uid="uid://134jh4bs4ex2" path="res://Scenes/Components/health.tscn" id="4_3sook"]
+[ext_resource type="PackedScene" uid="uid://dsghhj6rg6qgy" path="res://Scenes/Components/hurt_box.tscn" id="4_5taqm"]
+[ext_resource type="Script" uid="uid://ob6ls3gdekw6" path="res://Scripts/Components/health.gd" id="5_hhqvu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhqvu"]
+height = 42.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6nr3"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(160, 240, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2axtr"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(0, 80, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weiy0"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(160, 80, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifblo"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(320, 80, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sook"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(480, 80, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhqvu"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(320, 240, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5taqm"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(480, 240, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot117"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(640, 240, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsrcc"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(800, 240, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ljlb"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(320, 320, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5of1y"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(480, 320, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_252bp"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(640, 320, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocfj4"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(320, 160, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl4uy"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(0, 240, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdxld"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(0, 320, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1t2y"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(0, 160, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tljp2"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(160, 320, 160, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32qxm"]
+atlas = ExtResource("1_yskxg")
+region = Rect2(160, 160, 160, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6nr3")
+}],
+"loop": 1,
+"name": &"Ground",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2axtr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weiy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifblo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sook")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhqvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5taqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot117")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsrcc")
+}],
+"loop": 0,
+"name": &"Pos Ground",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ljlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5of1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_252bp")
+}],
+"loop": 1,
+"name": &"Pos Shock Wave",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocfj4")
+}],
+"loop": 1,
+"name": &"Pos Tackle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl4uy")
+}],
+"loop": 1,
+"name": &"Pre Ground",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdxld")
+}],
+"loop": 1,
+"name": &"Pre Shock Wave",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1t2y")
+}],
+"loop": 1,
+"name": &"Pre_Tackle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tljp2")
+}],
+"loop": 1,
+"name": &"Shock Wave",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32qxm")
+}],
+"loop": 1,
+"name": &"Tackle",
+"speed": 5.0
+}]
+
+[node name="Boss Orokai" type="CharacterBody2D" unique_id=1435269347 groups=["boss"]]
+script = ExtResource("1_y6nr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=151976683]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_hhqvu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1276833755]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1632836194]
+
+[node name="HitBox" parent="Area2D" unique_id=306318233 instance=ExtResource("3_hhqvu")]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(0, 2)
+
+[node name="HurtBox" parent="Area2D" unique_id=1866440835 instance=ExtResource("4_5taqm")]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0, 2)
+
+[node name="Boss Base Component" parent="." unique_id=1835036066 instance=ExtResource("3_ifblo")]
+
+[node name="Health" parent="." unique_id=1830546194 instance=ExtResource("4_3sook")]
+script = ExtResource("5_hhqvu")
+health = 25
+max_health = 25

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var area = $Area2D
 @onready var health = $Health
+@export var label : CanvasLayer
 
 var direction : float = 0
 var last_direction : float = 0
@@ -23,7 +24,7 @@ enum state{IDLE, WALK, JUMP, FALL, LAND, DASH, ATTACK, HURT, DEAD}
 @export var current_state = state.IDLE
 
 func _ready() -> void:
-	health.health = 5
+	pass
 
 func _physics_process(_delta: float) -> void:
 	if current_state != state.LAND:
@@ -36,6 +37,7 @@ func _physics_process(_delta: float) -> void:
 	if direction != 0:
 		last_direction = direction
 	sprite.update_sprite()
+	label.atualize_label()
 	
 	move_and_slide()
 
@@ -136,8 +138,9 @@ func move_player_y(delta):
 			velocity.y += gravity * delta
 
 func be_hit():
-	if health.health > 0:
+	if health.health > 1:
 		current_state = state.HURT
 		health.hurt()
 	else:
+		health.hurt()
 		current_state = state.DEAD

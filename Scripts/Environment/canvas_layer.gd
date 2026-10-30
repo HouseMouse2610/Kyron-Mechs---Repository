@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var l = $Label
-@onready var h = $Health # essa linha aqui não funciona
+@export var h : Node
 
 func atualize_label():
-	l.text = str(h.health) + str(h.max_health)
+	l.text = "Health: " + str(h.health) + " / " + str(h.max_health)
 	

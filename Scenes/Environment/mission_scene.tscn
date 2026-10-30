@@ -3,17 +3,28 @@
 [ext_resource type="PackedScene" uid="uid://dc2rbq3o582w5" path="res://Scenes/Environment/tile_set.tscn" id="1_fqokx"]
 [ext_resource type="PackedScene" uid="uid://bjs82q1o7wndx" path="res://Scenes/Player/player_mech.tscn" id="2_d7hjr"]
 [ext_resource type="Script" uid="uid://bd65fd5ah6sd2" path="res://Scripts/Environment/canvas_layer.gd" id="3_qgi65"]
+[ext_resource type="PackedScene" uid="uid://d1qc188yu5u5p" path="res://Scenes/Enemies/boss_orokai.tscn" id="4_e7hj1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qgi65"]
 
 [node name="Mission Scene" type="Node2D" unique_id=670270641]
 
 [node name="TileSet" parent="." unique_id=1071705506 instance=ExtResource("1_fqokx")]
 
-[node name="Player Mech" parent="." unique_id=834378137 instance=ExtResource("2_d7hjr")]
+[node name="Player Mech" parent="." unique_id=834378137 node_paths=PackedStringArray("label") instance=ExtResource("2_d7hjr")]
 position = Vector2(0, -64)
+label = NodePath("../CanvasLayer")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1852602970]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1852602970 node_paths=PackedStringArray("h")]
 script = ExtResource("3_qgi65")
+h = NodePath("../Player Mech/Health")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=2018768880]
 offset_right = 40.0
 offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_qgi65")
+
+[node name="Boss Orokai" parent="." unique_id=1435269347 instance=ExtResource("4_e7hj1")]
+position = Vector2(1200, 312)
+
+[editable path="Player Mech"]
